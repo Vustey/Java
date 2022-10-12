@@ -92,14 +92,29 @@ public class FigureList {
 
     void sortFigureByPerimeter() {
         System.out.println("\nSort Figure By Perimeter");
-        for (int i = 0; i < figureList.size() + 1; i++) {
-            for(int j = i+1 ;j <figureList.size();j++){
-                if(figureList.get(i).perimeter()<figureList.get(j).perimeter()){
-                    Figure tmp = figureList.get(i);
-                    figureList.set(i,figureList.get(j));
-                    figureList.set(j,tmp);
-                }
-            }
+//        for (int i = 0; i < figureList.size() + 1; i++) {
+//            for(int j = i+1 ;j <figureList.size();j++){
+//                if(figureList.get(i).perimeter()<figureList.get(j).perimeter()){
+//                    Figure tmp = figureList.get(i);
+//                    figureList.set(i,figureList.get(j));
+//                    figureList.set(j,tmp);
+//                }
+//            }
+//        }
+//        display();
+
+//        for(int i = 0 ;i<figureList.size();i++){
+//            Collections.sort(figureList, new Comparator<Figure>() {
+//                @Override
+//                public int compare(Figure o1, Figure o2) {
+//                    return o1.area()<o2.area() ? 1 : -1;
+//                }
+//            });
+//        }
+//        display();
+
+        for(int i = 0 ;i<figureList.size();i++){
+           Collections.sort(figureList,Comparator.comparing(Figure::area));
         }
         display();
     }
