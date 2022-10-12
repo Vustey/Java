@@ -213,11 +213,26 @@ public class PersonList {
         p[v].display();
     }
 
+    void remove(){
+        System.out.print("Enter Code : ");
+        String newCode = scanner.nextLine();
+        Person[] tmpPerson = new Person[p.length-1];
+        for (int i = 0,k=0 ; i< p.length ;i++){
+            if(p[i].getCode().equals(newCode)){
+                continue;
+            }
+            tmpPerson[k++] = this.p[i];
+        }
+        p = tmpPerson;
+        n--;
+    }
+
     public static void main(String[] args) {
         PersonList personList = new PersonList();
         personList.nhap();
         personList.xuat();
         personList.avgRank();
         personList.maxRank();
+        personList.remove();
     }
 }
